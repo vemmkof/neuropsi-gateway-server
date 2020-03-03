@@ -26,7 +26,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
     log.info("SETTING UP HttpSecurity");
     http//
         .authorizeRequests()//
-        .antMatchers(HttpMethod.POST, "/auth/oauth/token").permitAll() //
+        .antMatchers(HttpMethod.POST, "/auth/oauth/**").permitAll() //
         .anyRequest().authenticated() //
         .and().cors().configurationSource(getConfigurationSource());
   }
